@@ -23,7 +23,9 @@ class Player:
     self.credits += machine.payoffs[symbol] * current_bet
 
 
-# Game: initial interface. Player sets a positive integer number of credits.
+### INITIAL INTERFACE ###
+# Player sets a positive integer number of credits.
+# After the initial credits are defined, the game itself can start.
 
 print("\n\t\t\t\tSLOT MACHINE\n")
 
@@ -40,9 +42,7 @@ while True:
 print("\n--------------------\n")
 
 
-# After the initial credits are defined, the game itself can start
-
-### GLOBAL VARIABLES FOR USE IN THE GAME
+### GLOBAL VARIABLES FOR USE IN THE GAME ###
 # Init machine and player objects
 machine = Machine()
 player = Player(initial_credits)
@@ -51,7 +51,7 @@ player = Player(initial_credits)
 keep_playing = ""
 
 
-### MAIN ROUTINE
+### MAIN ROUTINE ###
 while player.credits > 0 and keep_playing != "N":
 
   # reset flags for new iteration
@@ -94,6 +94,7 @@ while player.credits > 0 and keep_playing != "N":
       keep_playing = input("Keep playing? (Y/N): ").upper()
 
 
+### GAME OVER ###
 if player.credits == 0:
   print("You're broke. Bye!\n")
 else:
